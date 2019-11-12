@@ -1,4 +1,4 @@
-Resut of print(score) = 0.9938 (99.38%)
+Resut of print(score) = 0.9926 (99.26%)
 
 Convolution:- Pulling out information by applying different filter on an image is convolution  
 Filters/Kernels:- Filter are the matrices which when applied to an area of image helps in taking out a feature from image.  
