@@ -1,6 +1,6 @@
 Final Validation accuracy for Base Network=82.56%
 
-Best validation accuracy for my network=82.70%
+Best validation accuracy for MY network=82.70% (on 30th Epoch)
 
 
 ******************************************************************************************************
