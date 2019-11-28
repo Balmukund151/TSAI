@@ -1,33 +1,36 @@
 Final Validation accuracy for Base Network=82.56%
+
 Best validation accuracy for my network=82.70%
+
+
+******************************************************************************************************
+
 
 def scheduler(epoch, lr):
   return round(0.01 * 1/(1 + 0.319 * epoch), 10)
   
-# Define the model
+# Define the model, post 
 mymodel = Sequential()
-mymodel.add(SeparableConv2D(32, 3, 3, depth_multiplier=2, input_shape=(32, 32, 3))) # 30
+mymodel.add(SeparableConv2D(32, 3, 3, depth_multiplier=2, input_shape=(32, 32, 3))) # size=30 Receptive Field=3
 mymodel.add(BatchNormalization())
 mymodel.add(Activation('relu'))
-#mymodel.add(Dropout(0.25))
-mymodel.add(SeparableConv2D(64, 3, 3, depth_multiplier=1)) # 28
+mymodel.add(SeparableConv2D(64, 3, 3, depth_multiplier=1)) # size=28 Receptive Field=5
 mymodel.add(BatchNormalization())
 mymodel.add(Activation('relu'))
-#mymodel.add(Dropout(0.25))
-mymodel.add(MaxPooling2D(pool_size=(2, 2))) #14
+mymodel.add(MaxPooling2D(pool_size=(2, 2))) #14 Receptive Field=6
 mymodel.add(BatchNormalization())
-mymodel.add(SeparableConv2D(64, 3, 3, depth_multiplier=2)) # 12
+mymodel.add(SeparableConv2D(64, 3, 3, depth_multiplier=2)) # size=12 Receptive Field=8
 mymodel.add(BatchNormalization())
 mymodel.add(Activation('relu'))
 mymodel.add(Dropout(0.2))
-mymodel.add(SeparableConv2D(128, 3, 3, depth_multiplier=2)) # 10
+mymodel.add(SeparableConv2D(128, 3, 3, depth_multiplier=2)) # size=10 Receptive Field=10
 mymodel.add(BatchNormalization())
 mymodel.add(Activation('relu'))
 mymodel.add(Dropout(0.2))
-mymodel.add(MaxPooling2D(pool_size=(2, 2))) #5
+mymodel.add(MaxPooling2D(pool_size=(2, 2))) # size=5 Receptive Field=11
 mymodel.add(BatchNormalization())
 mymodel.add(Dropout(0.2))
-mymodel.add(SeparableConv2D(256, 3, 3, depth_multiplier=1)) # 3
+mymodel.add(SeparableConv2D(256, 3, 3, depth_multiplier=1)) # size=3 Receptive Field=13
 mymodel.add(BatchNormalization())
 mymodel.add(Activation('relu'))
 mymodel.add(Dropout(0.2))
