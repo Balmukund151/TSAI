@@ -9,7 +9,8 @@ Best validation accuracy for my network=82.70%
 def scheduler(epoch, lr):
   return round(0.01 * 1/(1 + 0.319 * epoch), 10)
   
-# Define the model, post 
+  
+# Define the model, size and Receptive Field are mentioned beside the layers of the model 
 mymodel = Sequential()
 mymodel.add(SeparableConv2D(32, 3, 3, depth_multiplier=2, input_shape=(32, 32, 3))) # size=30 Receptive Field=3
 mymodel.add(BatchNormalization())
