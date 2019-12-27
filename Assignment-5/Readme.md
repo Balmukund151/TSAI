@@ -5,6 +5,10 @@ Though individual accuracies are bit more(max 1% more than the listed above) but
 
 Have used dilation to improve the receptive Field , kept bacth size=32(doesn't lookk like it contributed much to improve the accuracy), used strides instead of max pool.
 
+Also, it looks like the data distribution is not even. As you can see in the countplot that for emotion, almost 70% data is for normal emotion and 30% is distributed between other 2 types of distribution. Because of this un even distribution and less no. of samples to learn from the accuracy rate is suffering. This is almost true for all the fields of the Image which needs to be predicted.
+To me this looks like the reason why accuracy stalls after certain point.
+In my view, we can apply augmentation but not to all but only for the samples where the training data is less and training data distribution is very uneven. Didn't get the time to try but looks like this approach if followed could result in better training and subsequently better validation accuracy.
+
 
 
 
